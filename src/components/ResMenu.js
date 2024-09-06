@@ -6,21 +6,22 @@ const ResMenu = () => {
     const [menu,setMenu]=useState(null);
 
   useEffect(()=>{
+    async function fetchmenu(){
+      const obj=await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.5802402&lng=88.4337248&restaurantId=${param.id}&submitAction=ENTER`);
+      const menuobj= await obj.json();
+      const menu1=menuobj.data;
+      setMenu(menu1)
+      console.log(menu1);
+   
+   
+     }
 
    fetchmenu();
 
 
-  },[])
+  },[param.id])
 
-  async function fetchmenu(){
-   const obj=await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.5802402&lng=88.4337248&restaurantId=${param.id}&submitAction=ENTER`);
-   const menuobj= await obj.json();
-   const menu1=menuobj.data;
-   setMenu(menu1)
-   console.log(menu1);
-
-
-  }
+ 
   const groupedCard = menu?.cards?.find(card => card.groupedCard);
 
 if (!groupedCard) {
