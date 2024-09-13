@@ -7,6 +7,7 @@ import Body from './components/Body';
 import About from './components/About';
 import Contact from './components/Contact';
 import ResMenu from './components/ResMenu';
+import Cart from './components/Cart';
 
 
 const route=createBrowserRouter([
@@ -25,6 +26,10 @@ const route=createBrowserRouter([
   {
     path:"/contact",
     element:<Contact/>
+  },
+  {
+    path:"/cart",
+    element:<Cart/>
   },
   {
     path:"/resmenu/:id",

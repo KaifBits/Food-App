@@ -8,9 +8,10 @@ const Header=()=>(
    <div className="italic flex justify-center items-center font-bold">petuk</div>
     </div>
     <ul className="flex space-x-10 justify-center items-center ">
-    <li className=" text-lg">Home</li>
+    <Link to="/"> <li className=" text-lg">Home</li></Link>
       <Link to="/about"><li className="text-lg" >About us</li></Link>
       <Link to="/contact"><li className="text-lg pr-10">Contact us</li></Link>
+      <Link to="/cart"><li className="text-lg pr-10">Cart</li></Link>
      </ul>
     </div>
     
